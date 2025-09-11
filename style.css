@@ -1,0 +1,74 @@
+:root {
+    --bg-main: #000000;
+    --bg-section: #111111;
+    --text-primary: #D1D0D0;
+    --text-secondary: #988686;
+    --accent: #5C4E4E;
+    --accent-light: #988686;
+    --border-color: rgba(209, 208, 208, 0.1);
+}
+
+.light-mode {
+    --bg-main: #F8F9FA;
+    --bg-section: #FFFFFF;
+    --text-primary: #212529;
+    --text-secondary: #6C757D;
+    --accent: #0D6EFD;
+    --accent-light: #0D6EFD;
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.themed-bg-section { background-color: var(--bg-section); transition: background-color 0.4s ease; }
+.themed-text-primary { color: var(--text-primary); transition: color 0.4s ease; }
+.themed-text-secondary { color: var(--text-secondary); transition: color 0.4s ease; }
+.themed-border { border-color: var(--border-color); transition: border-color 0.4s ease; }
+
+.glass-effect {
+    background: var(--bg-section-translucent, rgba(17, 17, 17, 0.7));
+    backdrop-filter: blur(12px);
+    transition: background-color 0.4s ease;
+}
+.light-mode .glass-effect { --bg-section-translucent: rgba(255, 255, 255, 0.7); }
+
+.section-title {
+    @apply text-3xl font-bold text-center mb-12;
+    color: var(--text-primary);
+}
+
+.btn-primary {
+     background-color: var(--accent-light);
+     color: var(--bg-main);
+     transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+.project-card, .skill-card {
+    background-color: var(--bg-section);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+}
+.skill-card:hover {
+    transform: scale(1.05);
+    background-color: var(--accent);
+}
+.skill-card:hover i, .skill-card:hover p {
+    color: var(--bg-section) !important;
+}
+
+.fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+.stagger-children > * { transition-delay: calc(var(--stagger-index) * 120ms); }
