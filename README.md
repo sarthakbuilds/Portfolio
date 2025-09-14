@@ -2,7 +2,7 @@ Personal Portfolio Website
 
 A clean, responsive, and modern personal portfolio website built to showcase my skills and projects. This project was developed as part of a technical task, focusing on core front-end technologies and best practices.
 
-Live Demo: https://sarthak.page.gd/
+Live Demo: https://sarthak.page.gd/?i=1
 
 
 Key Features.....
